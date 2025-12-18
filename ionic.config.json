@@ -1,0 +1,7 @@
+{
+  "name": "applitansportv",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
