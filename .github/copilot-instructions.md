@@ -1,5 +1,49 @@
 # Copilot instructions — applitansportv
 
+Bref: dépôt Ionic + Angular (composants standalone) + Capacitor — guide concis
+
+- **Stack & scripts**: Angular 20, Ionic 8, Capacitor 8. Scripts utiles:
+  - `npm start` (ng serve), `npm run build`, `npm run watch`, `npm test`, `npm run lint`.
+
+- **Points d'entrée importants**:
+  - Routes lazy: [src/app/app.routes.ts](src/app/app.routes.ts#L1-L20)
+  - Pages (standalone): [src/app/home/home.page.ts](src/app/home/home.page.ts#L1-L200), [src/app/validation/validation.page.ts](src/app/validation/validation.page.ts#L1-L200), [src/app/createcompte/createcompte.page.ts](src/app/createcompte/createcompte.page.ts#L1-L200)
+  - Service HTTP central: [src/app/reservation.ts](src/app/reservation.ts#L1-L200)
+  - Capacitor config: [capacitor.config.ts](capacitor.config.ts#L1-L50) (webDir: `www`)
+
+- **Architecture & pattern clés**:
+  - Pages sont `standalone: true` et importent explicitement modules nécessaires (`FormsModule`, `CommonModule`, composants Ionic).
+  - Routes utilisent `loadComponent` pour lazy-loading (ne pas refactorer sans mettre à jour `app.routes.ts`).
+  - `Reservation` est le service central pour l'API (URL par défaut: `http://localhost:3000/Reservation`).
+  - Styles SCSS globaux: `src/global.scss` et variables dans `src/theme/variables.scss`.
+
+- **Règles pratiques pour un agent IA**:
+  - Ne pas supprimer la lazy-loading — respecter `loadComponent` et `standalone: true`.
+  - Lors de l'ajout/modification d'un composant standalone, explicitement ajouter tous les imports nécessaires dans le décorateur `@Component({ imports: [...] })`.
+  - Pour changer l'API backend, mettre à jour uniquement `src/app/reservation.ts` et laisser un commentaire clarifiant l'URL.
+  - Tests: utiliser `npm test` (Karma + Jasmine). Vérifier `karma.conf.js` si les tests échouent.
+
+- **Environnement dev & backend local**:
+  - L'API de dev attend `http://localhost:3000/Reservation`. Pour lancer rapidement une fausse API:
+
+```bash
+npx json-server --watch bd.json --port 3000
+```
+
+  - Note: dans le terminal d'origine une commande mal tapée `jeson-server --watch bd.json` peut échouer — utiliser `npx json-server`.
+
+- **Exemples concrets dans le code**:
+  - Route lazy: voir [src/app/app.routes.ts](src/app/app.routes.ts#L1-L20).
+  - Utilisation du service: `this.reservation.addReservation(this.reservationData).subscribe(...)` dans [src/app/home/home.page.ts](src/app/home/home.page.ts#L1-L200).
+
+- **Conseils de contribution**:
+  - Tester localement: `npm start` puis lancer `npx json-server --watch bd.json --port 3000` si besoin.
+  - Pour build mobile: `npm run build` puis `npx cap sync` / `npx cap open <platform>`.
+  - Eviter refactors globaux des routes ou du pattern standalone sans tests et sans mise à jour des imports.
+
+Si vous voulez, je peux: générer des exemples de PR, ajouter checklists CI, ou créer un petit script pour démarrer le backend mock.
+# Copilot instructions — applitansportv
+
 Bref: Ce dépôt est une application Ionic + Angular (standalone components) utilisant Capacitor. Ces instructions aident un agent IA à être productif rapidement.
 
 - **Stack**: Angular 20, Ionic 8, Capacitor 8. Voir `package.json` pour scripts et dépendances.

@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Créer un compte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="auth-page ion-padding">
+
+  <ion-card class="auth-card">
+    <ion-card-content>
+
+      <!-- Nom -->
+      <ion-item class="auth-item">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input
+         label="Nom"
+      label-placement="floating"
+          placeholder="Entrer votre Nom"
+          [(ngModel)]="userData.Nom">
+        </ion-input>
+      </ion-item>
+
+      <!-- Prénom -->
+      <ion-item class="auth-item">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input
+             label="Prenom"
+      label-placement="floating"
+          placeholder="Entrer votre Prenom"
+          [(ngModel)]="userData.Prenom">
+        </ion-input>
+      </ion-item>
+
+      <!-- Téléphone -->
+      <ion-item class="auth-item">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-input
+             label="Telephone"
+      label-placement="floating"
+          placeholder="Entrer votre numero"
+          type="tel"
+          [(ngModel)]="userData.Telephone">
+        </ion-input>
+      </ion-item>
+
+      <!-- Email -->
+      <ion-item class="auth-item">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input
+         label="Email"
+      label-placement="floating"
+          placeholder="Email"
+          type="email"
+          [(ngModel)]="userData.Email">
+        </ion-input>
+      </ion-item>
+
+      <!-- Mot de passe -->
+      <ion-item class="auth-item">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input
+             label="Password"
+      label-placement="floating"
+          placeholder="Entrer votre de passe"
+          type="password"
+          [(ngModel)]="userData.MotDepasse">
+        </ion-input>
+      </ion-item>
+
+      <!-- Bouton -->
+      <ion-button expand="block" class="auth-btn" (click)="saveUser()">
+        <ion-icon slot="start" name="person-add-outline"></ion-icon>
+        Créer le compte
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

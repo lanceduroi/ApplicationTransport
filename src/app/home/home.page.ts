@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent ,IonItem,IonInput,IonButton,IonList , IonSelect, 
+import { IonHeader, IonToolbar, IonTitle, IonContent ,IonItem,IonInput,IonButton,IonList , IonSelect, IonNote,
   IonSelectOption,IonLabel,IonButtons ,IonBackButton} from '@ionic/angular/standalone';
 import {Reservation } from '../reservation';
 import { IonIcon } from '@ionic/angular/standalone';
@@ -23,7 +23,7 @@ import {
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone:true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent,IonItem,IonInput,IonButton,IonList,
+  imports: [IonHeader, IonToolbar, IonTitle, IonNote,IonContent,IonItem,IonInput,IonButton,IonList,
     FormsModule,
      IonSelect,
   IonSelectOption,
@@ -56,7 +56,7 @@ export class HomePage {
     typeReservation: '',
    DateReservation: '',
      montant: 0 ,
-      status: 'nonvalider'
+      status: ''
   };
 showReservations = false;
 reservations: any[] = [];
@@ -95,7 +95,11 @@ editReservation(r: any) {
 }
 loadReservations() {
   this.reservation.getReservations().subscribe(data => {
-    this.reservations = data;
+    this.reservations = data.sort(
+      (a: any, b: any) =>
+        new Date(b.DateReservation).getTime() -
+        new Date(a.DateReservation).getTime()
+    );
   });
 }
 
@@ -139,7 +143,9 @@ loadReservations() {
       });
   } else {
     // MODE CREATION
-      this.reservationData.status = 'nonvalider';
+
+   this.reservationData.status = 'nonvalider';
+  this.updateDateReservation()
     this.reservation.addReservation(this.reservationData)
       .subscribe(() => {
         alert('Réservation ajoutée avec succès');

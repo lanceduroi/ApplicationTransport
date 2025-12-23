@@ -27,8 +27,14 @@ import {
 export class ValidationPage implements OnInit {
    lastReservation: any;
   constructor(private router: Router, private reservation: Reservation) { }
+  currentUser: any;
   ngOnInit() {
    this.loadLastReservation()
+     const userData = localStorage.getItem('currentUser');
+
+  if (userData) {
+    this.currentUser = JSON.parse(userData);
+  }
   }
   //Annulation
   annulerReservation() {

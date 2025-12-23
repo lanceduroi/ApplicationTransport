@@ -64,12 +64,13 @@
           </ion-select-option>
         </ion-select>
       </ion-item>
-
-      <ion-item>
-        <ion-icon slot="start" name="cash-outline"></ion-icon>
-        <ion-label>Montant:</ion-label> 
-        <ion-input type="number" [(ngModel)]="reservationData.montant"readonly></ion-input>
-      </ion-item>
+     <ion-item>
+            <ion-icon slot="start" name="cash-outline"></ion-icon>
+            <ion-label>
+              Montant :
+              <strong >{{ reservationData.montant }} FCFA</strong>
+            </ion-label>
+       </ion-item>
 
     </ion-list>
 
@@ -95,7 +96,11 @@
           <p><ion-icon name="calendar-outline"></ion-icon> {{ r.DateDepart }}</p>
           <p><ion-icon name="star-outline"></ion-icon> {{ r.typeReservation }}</p>
           <p><ion-icon name="cash-outline"></ion-icon> {{ r.montant }} FCFA</p>
+      
         </ion-label>
+
+          <p>Date réservation : {{ r.DateReservation}}</p> <br> <br>
+          <p> Status :<strong [style.color]="r.status === 'valider' ? 'green' : 'orange'"> {{ r.status }} </strong> </p>
 
         <ion-button fill="clear" color="warning" (click)="editReservation(r)">
           <ion-icon name="create-outline"></ion-icon>
@@ -107,5 +112,7 @@
       </ion-item>
     </ion-list>
   </ion-card>
-
+  <ion-button href="../accueil/" expand="full">
+  Créer un utilisateur
+ </ion-button>
 </ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-icon slot="start" [icon]="mailOutline"></ion-icon>
+    <ion-input
+      label="Email"
+      label-placement="floating"
+      type="email"
+      [(ngModel)]="email">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon slot="start" [icon]="lockClosedOutline"></ion-icon>
+    <ion-input
+      label="Mot de passe"
+      label-placement="floating"
+      type="password"
+      [(ngModel)]="password">
+    </ion-input>
+  </ion-item>
+
+  <ion-text color="danger" *ngIf="errorMsg">
+    <p>{{ errorMsg }}</p>
+  </ion-text>
+
+  <ion-button expand="full" shape="round" (click)="login()">
+    Se connecter
+  </ion-button>
+
+  <!-- Mot de passe oublié -->
+  <ion-text class="forgot">
+    <a>Mot de passe oublié ?</a>
+  </ion-text>
+
+  <!-- Créer un compte -->
+  <ion-button
+  href="../createcompte/"
+    expand="full"
+    fill="outline"
+    routerLink="/createcompte">
+    <ion-icon slot="start" [icon]="personAddOutline"></ion-icon>
+    Créer un compte
+  </ion-button>
+
+  <!-- Connexion sociale -->
+  <div class="social">
+    <ion-button fill="clear">
+      <ion-icon [icon]="logoGoogle"></ion-icon>
+    </ion-button>
+
+    <ion-button fill="clear">
+      <ion-icon [icon]="logoGithub"></ion-icon>
+    </ion-button>
+
+    <ion-button fill="clear">
+      <ion-icon [icon]="logoFacebook"></ion-icon>
+    </ion-button>
+  </div>
+
+</ion-content>

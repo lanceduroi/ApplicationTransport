@@ -11,6 +11,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="reservation-page">
+  <ion-card *ngIf="currentUser" class="user-card">
+  <ion-item lines="none">
+    <ion-icon name="person-circle-outline" slot="start" size="large"></ion-icon>
+    <ion-label>
+      <h2>{{ currentUser.Prenom }} {{ currentUser.Nom }}</h2>
+      <p>Utilisateur connecté</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
   <ion-card *ngIf="lastReservation" class="reservation-card">
     <ion-card-header>
       <ion-card-title>
