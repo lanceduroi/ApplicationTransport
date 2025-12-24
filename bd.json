@@ -63,6 +63,14 @@
       "Telephone": "60169791",
       "Email": "elikebir381@gmail.com",
       "MotDepasse": "1234"
+    },
+    {
+      "id": "5ea2",
+      "Nom": "ali",
+      "Prenom": "ABDALLAH",
+      "Telephone": "81708034",
+      "Email": "elikebir381@gmail.com",
+      "MotDepasse": "1234"
     }
   ],
   "Reservation": [
@@ -275,6 +283,16 @@
       "DateDepart": "2025-12-15",
       "typeReservation": "standard",
       "DateReservation": "2025-12-23T16:56",
+      "montant": 5000,
+      "status": "valider"
+    },
+    {
+      "id": "ec5b",
+      "VilleDepart": "Niamey",
+      "VilleArrivee": "Zinder",
+      "DateDepart": "2025-12-04",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-24T18:29",
       "montant": 5000,
       "status": "valider"
     }
