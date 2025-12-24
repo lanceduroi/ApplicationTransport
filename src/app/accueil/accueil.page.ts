@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonFooter, IonGrid, IonCol, IonRow, IonLabel, IonIcon, IonList, IonItem } from '@ionic/angular/standalone';
-import { DataService } from '../services/data.service';
-import { Product } from '../product.interface';
-import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import{ clipboard } from 'ionicons/icons';
 
 @Component({
   selector: 'app-accueil',
@@ -16,7 +12,6 @@ import{ clipboard } from 'ionicons/icons';
 })
 export class accueilPage implements OnInit {
   nom: string = '';
-  products: Product[] = [];
 
   constructor(private http: HttpClient,private navCtrl: NavController ) {}
 
