@@ -1,50 +1,63 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonButton,IonCard,IonButtons,IonCardContent,IonToolbar, IonIcon,IonList ,IonItem,IonInput,IonCol, IonBackButton} from '@ionic/angular/standalone';
-import { User } from '../user';
+import { FormBuilder, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
+import { IonicModule, NavController } from '@ionic/angular';
+import { VoyageurService } from 'src/app/services/voyageur.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-createcompte',
   templateUrl: './createcompte.page.html',
   styleUrls: ['./createcompte.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle,IonCard,IonCardContent,IonCol,IonButtons,IonButton,IonInput, IonItem,IonBackButton,IonToolbar, CommonModule, IonIcon,FormsModule,IonList]
+  imports: [IonicModule, CommonModule, ReactiveFormsModule]
 })
 export class CreatecomptePage implements OnInit {
-  userData = {
-    Nom: '',
-    Prenom: '',
-    Telephone: '',
-    Email: '',
-    MotDepasse: ''
-  };
-  constructor(private User:User) { }
-  ngOnInit() {}
-saveUser(){
-    if (
-      !this.userData.Nom ||
-      !this.userData.Prenom ||
-      !this.userData.Telephone ||
-      !this.userData.Email ||
-      !this.userData.MotDepasse
-    ) {
-      alert('Veuillez remplir tous les champs');
-      return;
-    }
 
-    this.User.addUser(this.userData).subscribe(() => {
-      alert('Utilisateur créé avec succès');
+  form!: FormGroup;
+  error = '';
+  passwordVisible = false;
 
-      this.userData = {
-        Nom: '',
-        Prenom: '',
-        Telephone: '',
-        Email: '',
-        MotDepasse: ''
-      };
+  constructor(private navCtrl: NavController, private fb: FormBuilder, private voyageurService: VoyageurService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.minLength(8)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
- 
-  
 
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
+
+  submit() {
+    if (this.form.invalid) return;
+
+    const newVoyageur = {
+      id: Date.now().toString(),
+      firstName: this.form.value.firstName,
+      lastName: this.form.value.lastName,
+      phone: this.form.value.phone,
+      email: this.form.value.email,
+      password: this.form.value.password
+    };
+
+    this.voyageurService.create(newVoyageur).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/login');
+      },
+      error: (err) => {
+        console.error(err);
+        this.error = 'Impossible de créer le compte. Veuillez réessayer.';
+      }
+    });
+  }
+
+  goBack() {
+    this.navCtrl.back();
+  }
 }

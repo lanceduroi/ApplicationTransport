@@ -1,82 +1,49 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/login"></ion-back-button>
+      <ion-back-button (click)="goBack()">
+      </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Créer un compte</ion-title>
+    <ion-title class="ion-text-center" style="color: white;">Créer un compte</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="auth-page ion-padding">
+<ion-content class="ion-padding">
 
-  <ion-card class="auth-card">
-    <ion-card-content>
+  <!-- Formulaire d'inscription -->
+  <form [formGroup]="form" (ngSubmit)="submit()">
 
-      <!-- Nom -->
-      <ion-item class="auth-item">
-        <ion-icon name="person-outline" slot="start"></ion-icon>
-        <ion-input
-         label="Nom"
-      label-placement="floating"
-          placeholder="Entrer votre Nom"
-          [(ngModel)]="userData.Nom">
-        </ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-input placeholder="Nom" type="text" formControlName="lastName"></ion-input>
+    </ion-item>
 
-      <!-- Prénom -->
-      <ion-item class="auth-item">
-        <ion-icon name="person-outline" slot="start"></ion-icon>
-        <ion-input
-             label="Prenom"
-      label-placement="floating"
-          placeholder="Entrer votre Prenom"
-          [(ngModel)]="userData.Prenom">
-        </ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-input placeholder="Prénom" type="text" formControlName="firstName"></ion-input>
+    </ion-item>
 
-      <!-- Téléphone -->
-      <ion-item class="auth-item">
-        <ion-icon name="call-outline" slot="start"></ion-icon>
-        <ion-input
-             label="Telephone"
-      label-placement="floating"
-          placeholder="Entrer votre numero"
-          type="tel"
-          [(ngModel)]="userData.Telephone">
-        </ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-input placeholder="Téléphone" type="text" formControlName="phone"></ion-input>
+    </ion-item>
 
-      <!-- Email -->
-      <ion-item class="auth-item">
-        <ion-icon name="mail-outline" slot="start"></ion-icon>
-        <ion-input
-         label="Email"
-      label-placement="floating"
-          placeholder="Email"
-          type="email"
-          [(ngModel)]="userData.Email">
-        </ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-item>
 
-      <!-- Mot de passe -->
-      <ion-item class="auth-item">
-        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-        <ion-input
-             label="Password"
-      label-placement="floating"
-          placeholder="Entrer votre de passe"
-          type="password"
-          [(ngModel)]="userData.MotDepasse">
-        </ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-input placeholder="Mot de passe" [type]="passwordVisible ? 'text' : 'password'"
+        formControlName="password"></ion-input>
+      <ion-icon [name]="passwordVisible ? 'eye-off-outline' : 'eye-outline'" slot="end"
+        (click)="togglePasswordVisibility()"></ion-icon>
+    </ion-item>
 
-      <!-- Bouton -->
-      <ion-button expand="block" class="auth-btn" (click)="saveUser()">
-        <ion-icon slot="start" name="person-add-outline"></ion-icon>
-        Créer le compte
-      </ion-button>
+    <p class="error" *ngIf="error">{{ error }}</p>
 
-    </ion-card-content>
-  </ion-card>
+    <ion-button expand="block" type="submit" [disabled]="form.invalid">
+      Créer un compte
+      <ion-icon slot="end" name="person-add-outline"></ion-icon>
+    </ion-button>
+
+  </form>
 
 </ion-content>

@@ -1,38 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title class="ion-text-center">Connexion</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title class=" ion-text-center" style="color: white;">Connexion</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
-  <ion-item>
-    <ion-icon slot="start" [icon]="mailOutline"></ion-icon>
-    <ion-input
-      label="Email"
-      label-placement="floating"
-      type="email"
-      [(ngModel)]="email">
-    </ion-input>
-  </ion-item>
+  <!-- Formulaire de connexion -->
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="submit()">
 
-  <ion-item>
-    <ion-icon slot="start" [icon]="lockClosedOutline"></ion-icon>
-    <ion-input
-      label="Mot de passe"
-      label-placement="floating"
-      type="password"
-      [(ngModel)]="password">
-    </ion-input>
-  </ion-item>
+    <ion-item class="item">
+      <ion-input placeholder="Email" type="email" formControlName="email">
+      </ion-input>
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-item>
 
-  <ion-text color="danger" *ngIf="errorMsg">
-    <p>{{ errorMsg }}</p>
-  </ion-text>
+    <ion-item class="item">
+      <ion-input placeholder="Mot de passe" [type]="passwordVisible ? 'text': 'password'" formControlName="password">
+      </ion-input>
+      <ion-icon [name]="passwordVisible ? 'eye-off-outline' : 'eye-outline'" slot="end"
+        (click)="togglePasswordVisibility()">
+      </ion-icon>
+    </ion-item>
 
-  <ion-button expand="full" shape="round" (click)="login()">
-    Se connecter
-  </ion-button>
+    <p class="error" *ngIf="error">{{ error }}</p>
+
+    <ion-button expand="block" type="submit" [disabled]="form.invalid">
+      Se connecter
+      <ion-icon slot="end" name="login-outline"></ion-icon>
+    </ion-button>
+
+  </form>
 
   <!-- Mot de passe oublié -->
   <ion-text class="forgot">
@@ -40,27 +38,23 @@
   </ion-text>
 
   <!-- Créer un compte -->
-  <ion-button
-  href="../createcompte/"
-    expand="full"
-    fill="outline"
-    routerLink="/createcompte">
-    <ion-icon slot="start" [icon]="personAddOutline"></ion-icon>
+  <ion-button expand="full" fill="outline" (click)="navigateCreateAccount()">
+    <ion-icon slot="start" name="person-add-outline"></ion-icon>
     Créer un compte
   </ion-button>
 
   <!-- Connexion sociale -->
   <div class="social">
     <ion-button fill="clear">
-      <ion-icon [icon]="logoGoogle"></ion-icon>
+      <ion-icon name="logo-google"></ion-icon>
     </ion-button>
 
     <ion-button fill="clear">
-      <ion-icon [icon]="logoGithub"></ion-icon>
+      <ion-icon name="logo-github"></ion-icon>
     </ion-button>
 
     <ion-button fill="clear">
-      <ion-icon [icon]="logoFacebook"></ion-icon>
+      <ion-icon name="logo-facebook"></ion-icon>
     </ion-button>
   </div>
 

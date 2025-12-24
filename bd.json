@@ -1,71 +1,95 @@
 {
-  "Users": [
+  "voyageurs": [
     {
-      "Nom": "oumar",
-      "Prenom": "moustapha",
-      "Telephone": 81708034,
-      "Email": "oumarmoustapha@gmail.com",
-      "MotDepasse": "oumar123",
-      "id": "1850"
+      "id": "1850",
+      "firstName": "oumar",
+      "lastName": "moustapha",
+      "phone": 81708034,
+      "email": "oumarmoustapha@gmail.com",
+      "password": "oumar123"
     },
     {
-      "Nom": "ali",
-      "Prenom": "abdallah",
-      "Telephone": 81708030,
-      "Email": "aliAbdallah@gmail.com",
-      "MotDepasse": "Ali123",
-      "id": "8ae9"
+      "id": "8ae9",
+      "firstName": "ali",
+      "lastName": "abdallah",
+      "phone": 81708030,
+      "email": "aliAbdallah@gmail.com",
+      "password": "Ali123"
     },
     {
-      "Nom": "ben",
-      "Prenom": "djamen",
-      "Telephone": 81708034,
-      "Email": "bendjamen@gmail.com",
-      "MotDepasse": "ben123",
-      "id": "509c"
+      "id": "509c",
+      "firstName": "ben",
+      "lastName": "djamen",
+      "phone": 81708034,
+      "email": "bendjamen@gmail.com",
+      "password": "ben123"
     },
     {
-      "Nom": "kata",
-      "Prenom": "aballah",
-      "Telephone": 81708034,
-      "Email": "kataabadalah@gmail.com",
-      "MotDepasse": "kata123",
-      "id": "a0c5"
+      "id": "a0c5",
+      "firstName": "kata",
+      "lastName": "aballah",
+      "phone": 81708034,
+      "email": "kataabadalah@gmail.com",
+      "password": "kata123"
     },
     {
       "id": "7f9a",
-      "Nom": "Ali",
-      "Prenom": "Wini",
-      "Telephone": "60169791",
-      "Email": "elikebir381@gmail.com",
-      "MotDepasse": "1234"
+      "firstName": "Ali",
+      "lastName": "Wini",
+      "phone": "60169791",
+      "email": "elikebir381@gmail.com",
+      "password": "1234"
     },
     {
       "id": "a5fb",
-      "Nom": "OUMAR",
-      "Prenom": "mht",
-      "Telephone": "678888",
-      "Email": "elikebir381@gmail.com",
-      "MotDepasse": "34555"
+      "firstName": "OUMAR",
+      "lastName": "mht",
+      "phone": "678888",
+      "email": "elikebir381@gmail.com",
+      "password": "34555"
     },
     {
       "id": "d52c",
-      "Nom": "ALI",
-      "Prenom": "ABDALLAH",
-      "Telephone": "81708034",
-      "Email": "elikebir381@gmail.com",
-      "MotDepasse": "1234"
+      "firstName": "ALI",
+      "lastName": "ABDALLAH",
+      "phone": "81708034",
+      "email": "elikebir381@gmail.com",
+      "password": "1234"
     },
     {
       "id": "192d",
-      "Nom": "ben",
-      "Prenom": "djamen",
-      "Telephone": "60169791",
-      "Email": "elikebir381@gmail.com",
-      "MotDepasse": "1234"
+      "firstName": "ben",
+      "lastName": "djamen",
+      "phone": "60169791",
+      "email": "elikebir381@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "1766539103828",
+      "firstName": "Saadou",
+      "lastName": "Habou",
+      "phone": "90132353",
+      "email": "mousalacharisaadouhabou@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "1766543978965",
+      "firstName": "Moutari",
+      "lastName": "Issa",
+      "phone": "98564723",
+      "email": "issa@test.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1766546640887",
+      "firstName": "Issa",
+      "lastName": "Salissou",
+      "phone": "90324521",
+      "email": "salissou@test.com",
+      "password": "12342"
     }
   ],
-  "Reservation": [
+  "reservations": [
     {
       "id": "3d5d",
       "VilleDepart": "Niamey",
@@ -275,6 +299,16 @@
       "DateDepart": "2025-12-15",
       "typeReservation": "standard",
       "DateReservation": "2025-12-23T16:56",
+      "montant": 5000,
+      "status": "valider"
+    },
+    {
+      "id": "361c",
+      "VilleDepart": "Maradi",
+      "VilleArrivee": "Agadez",
+      "DateDepart": "2025-12-25",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-24T04:27",
       "montant": 5000,
       "status": "valider"
     }

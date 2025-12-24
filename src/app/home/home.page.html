@@ -1,11 +1,11 @@
 <ion-header translucent>
   <ion-toolbar color="primary">
-     <!-- Flèche retour -->
+    <!-- Flèche retour -->
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title >
-    <ion-icon name="bus-outline"></ion-icon>
+    <ion-title>
+      <ion-icon name="bus-outline"></ion-icon>
       Réservation
     </ion-title>
   </ion-toolbar>
@@ -20,9 +20,7 @@
       <ion-item>
         <ion-icon slot="start" name="location-outline"></ion-icon>
         <ion-label>Ville de départ</ion-label>
-        <ion-select
-          [(ngModel)]="reservationData.VilleDepart"
-          (ionChange)="updateDateReservation()"
+        <ion-select [(ngModel)]="reservationData.VilleDepart" (ionChange)="updateDateReservation()"
           placeholder="Choisir">
           <ion-select-option *ngFor="let ville of villesNiger" [value]="ville">
             {{ ville }}
@@ -31,11 +29,9 @@
       </ion-item>
 
       <ion-item>
-      <ion-icon slot="start" name="location-outline"></ion-icon>
+        <ion-icon slot="start" name="location-outline"></ion-icon>
         <ion-label>Ville d’arrivée</ion-label>
-        <ion-select
-          [(ngModel)]="reservationData.VilleArrivee"
-          (ionChange)="updateDateReservation()"
+        <ion-select [(ngModel)]="reservationData.VilleArrivee" (ionChange)="updateDateReservation()"
           placeholder="Choisir">
           <ion-select-option *ngFor="let ville of villesNiger" [value]="ville">
             {{ ville }}
@@ -46,31 +42,26 @@
       <ion-item>
         <ion-icon slot="start" name="calendar-outline"></ion-icon>
         <ion-label>Date départ</ion-label>
-        <ion-input
-          type="date"
-          [(ngModel)]="reservationData.DateDepart"
-          (ionChange)="updateDateReservation()">
+        <ion-input type="date" [(ngModel)]="reservationData.DateDepart" (ionChange)="updateDateReservation()">
         </ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon slot="start" name="star-outline"></ion-icon>
         <ion-label>Type</ion-label>
-        <ion-select
-          [(ngModel)]="reservationData.typeReservation"
-          (ionChange)="updateMontant()">
+        <ion-select [(ngModel)]="reservationData.typeReservation" (ionChange)="updateMontant()">
           <ion-select-option *ngFor="let type of typesReservation" [value]="type">
             {{ type }}
           </ion-select-option>
         </ion-select>
       </ion-item>
-     <ion-item>
-            <ion-icon slot="start" name="cash-outline"></ion-icon>
-            <ion-label>
-              Montant :
-              <strong >{{ reservationData.montant }} FCFA</strong>
-            </ion-label>
-       </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="cash-outline"></ion-icon>
+        <ion-label>
+          Montant :
+          <strong>{{ reservationData.montant }} FCFA</strong>
+        </ion-label>
+      </ion-item>
 
     </ion-list>
 
@@ -96,11 +87,11 @@
           <p><ion-icon name="calendar-outline"></ion-icon> {{ r.DateDepart }}</p>
           <p><ion-icon name="star-outline"></ion-icon> {{ r.typeReservation }}</p>
           <p><ion-icon name="cash-outline"></ion-icon> {{ r.montant }} FCFA</p>
-      
+
         </ion-label>
 
-          <p>Date réservation : {{ r.DateReservation}}</p> <br> <br>
-          <p> Status :<strong [style.color]="r.status === 'valider' ? 'green' : 'orange'"> {{ r.status }} </strong> </p>
+        <p>Date réservation : {{ r.DateReservation}}</p> <br> <br>
+        <p> Status :<strong [style.color]="r.status === 'valider' ? 'green' : 'orange'"> {{ r.status }} </strong> </p>
 
         <ion-button fill="clear" color="warning" (click)="editReservation(r)">
           <ion-icon name="create-outline"></ion-icon>
@@ -112,7 +103,7 @@
       </ion-item>
     </ion-list>
   </ion-card>
-  <ion-button href="../accueil/" expand="full">
-  Créer un utilisateur
- </ion-button>
+  <ion-button (click)="navigateToCreateNewUser()" expand="full">
+    Créer un utilisateur
+  </ion-button>
 </ion-content>

@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class Reservation { 
-  private apiUrl = 'http://localhost:3000/Reservation';
+export class Reservation {
+  private apiUrl = 'http://localhost:3000/reservations';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Ajouter une réservation
   addReservation(data: any): Observable<any> {
@@ -19,18 +19,18 @@ export class Reservation {
     return this.http.get<any[]>(this.apiUrl);
   }
   //supprimer
-    deleteReservation(id: number) {
+  deleteReservation(id: number) {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
-//Modifier
+  //Modifier
   updateReservation(id: number, data: any) {
     return this.http.put(`${this.apiUrl}/${id}`, data);
   }
-  //dernier reservation 
- getLastReservation() {
-  return this.http.get<any[]>(
-    'http://localhost:3000/Reservation?_sort=DateReservation&_order=desc&_limit=1'
-  );
-}
-  
+  //dernier reservation
+  getLastReservation() {
+    return this.http.get<any[]>(
+      'http://localhost:3000/Reservation?_sort=DateReservation&_order=desc&_limit=1'
+    );
+  }
+
 }

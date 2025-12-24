@@ -1,40 +1,69 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Fond global */
 ion-content {
-  --background: #f9f9f9;
+  --background: linear-gradient(to bottom right, #3880ff, white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
+/* Carte formulaire (glassmorphism) */
+form {
+  width: 100%;
+  max-width: 380px;
+  padding: 2rem;
+  background: rgba(30, 109, 127, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Champs */
 ion-item {
-  margin-bottom: 12px;
-  --border-radius: 12px;
-  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  border-radius: 12px;
+  --background: transparent;
+  padding: 0 0.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-ion-icon {
-  font-size: 1.5rem;
-  color: #3880ff;
+ion-label {
+  color: #00bcd4;
+  /* cyan du premier */
+  font-weight: 500;
 }
 
 ion-input {
-  font-size: 1rem;
+  color: white;
+  border-radius: 25px;
 }
 
-.animated-button {
-  margin-top: 20px;
-  --border-radius: 12px;
-  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Bouton principal */
+ion-button {
+  margin-top: 15px;
+  --border-radius: 15px;
+  --background: #3880ff;
+  /* orange du premier */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.animated-button:hover {
-  transform: translateY(-2px);
-  --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+ion-text a {
+  color: white;
 }
 
-@media screen and (max-width: 480px) {
-  ion-input {
-    font-size: 0.9rem;
-  }
+ion-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
 
-  ion-icon {
-    font-size: 1.2rem;
-  }
+ion-icon {
+  color: white;
 }
