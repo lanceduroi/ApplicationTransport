@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class User {
-  private apiUrl = 'http://localhost:3000/Users';
+  private apiUrl = 'http://localhost:3000/voyageurs';
     constructor(private http: HttpClient) {}
 
 // Ajouter un utilisateur

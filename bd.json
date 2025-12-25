@@ -57,29 +57,6 @@
       "password": "1234"
     },
     {
-      "id": "192d",
-<<<<<<< HEAD
-      "Nom": "ben",
-      "Prenom": "djamen",
-      "Telephone": "60169791",
-      "Email": "elikebir381@gmail.com",
-      "MotDepasse": "1234"
-    },
-    {
-      "id": "5ea2",
-      "Nom": "ali",
-      "Prenom": "ABDALLAH",
-      "Telephone": "81708034",
-      "Email": "elikebir381@gmail.com",
-      "MotDepasse": "1234"
-=======
-      "firstName": "ben",
-      "lastName": "djamen",
-      "phone": "60169791",
-      "email": "elikebir381@gmail.com",
-      "password": "1234"
-    },
-    {
       "id": "1766539103828",
       "firstName": "Saadou",
       "lastName": "Habou",
@@ -102,7 +79,14 @@
       "phone": "90324521",
       "email": "salissou@test.com",
       "password": "12342"
->>>>>>> connexion
+    },
+    {
+      "id": "1766673752866",
+      "firstName": "ABDALLAH",
+      "lastName": "ALI",
+      "phone": "81708034",
+      "email": "elikebir381@gmail.com",
+      "password": "1234"
     }
   ],
   "reservations": [
@@ -319,23 +303,24 @@
       "status": "valider"
     },
     {
-<<<<<<< HEAD
-      "id": "ec5b",
+      "id": "f1de",
       "VilleDepart": "Niamey",
-      "VilleArrivee": "Zinder",
-      "DateDepart": "2025-12-04",
+      "VilleArrivee": "Niamey",
+      "DateDepart": "2025-12-11",
       "typeReservation": "standard",
-      "DateReservation": "2025-12-24T18:29",
-=======
-      "id": "361c",
-      "VilleDepart": "Maradi",
-      "VilleArrivee": "Agadez",
-      "DateDepart": "2025-12-25",
-      "typeReservation": "standard",
-      "DateReservation": "2025-12-24T04:27",
->>>>>>> connexion
+      "DateReservation": "2025-12-25T15:43",
       "montant": 5000,
       "status": "valider"
+    },
+    {
+      "id": "e9d1",
+      "VilleDepart": "Maradi",
+      "VilleArrivee": "Maradi",
+      "DateDepart": "2025-12-17",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-25T17:08",
+      "montant": 5000,
+      "status": "nonvalider"
     }
   ],
   "Bus": [

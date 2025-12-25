@@ -1,30 +1,5 @@
-<<<<<<< HEAD
 #container {
   text-align: center;
-=======
-* {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-/* Fond global */
-ion-content {
-  --background: linear-gradient(to bottom right, #3880ff, white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
-.menu-card {
-  text-align: center;
-  border-radius: 18px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  margin-bottom: 15px;
-  --background: transparent;
-}
->>>>>>> connexion
 
   position: absolute;
   left: 0;
@@ -94,7 +69,6 @@ home{
 ion-content {
   --background:#007BFF;
 
-<<<<<<< HEAD
   }
 .icon-container {
   padding: 75px;
@@ -110,8 +84,11 @@ ion-content {
   background: #e3f2fd;
   color:#2196f3;
   }
+  ion-icon{
+    color: #007BFF;
+  }
 .home-colis {
-
+color: #f9f9f9;
   }
 
 .icon-container:active{
@@ -145,19 +122,10 @@ ion-content {
 
 
 #container strong {
-=======
-p {
-  color: white;
-}
-
-.menu-card h2 {
-  color: #3880ff;
->>>>>>> connexion
   font-size: 20px;
   line-height: 26px;
 }
 
-<<<<<<< HEAD
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -170,9 +138,3 @@ p {
 #container a {
   text-decoration: none;
 }
-=======
-.menu-card p {
-  font-size: 14px;
-  color: white;
-}
->>>>>>> connexion

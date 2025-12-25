@@ -24,10 +24,6 @@ export const routes: Routes = [
   },
   {
     path: 'accueil',
-<<<<<<< HEAD
     loadComponent: () => import('./accueil/accueil.page').then( m => m.accueilPage)
-=======
-    loadComponent: () => import('./accueil/accueil.page').then(m => m.AccueilPage)
->>>>>>> connexion
   },
 ];
