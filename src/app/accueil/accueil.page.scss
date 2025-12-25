@@ -7,7 +7,24 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
+.position{
+  position:absolute;
+  top:20px;
+  left:30px;
+  width:100px;
+  height:auto;
+  object-fit: cover;
+  border-radius: 50%;
+  }
+.droite{
+  position:absolute;
+  top:20px;
+  right:30px;
+  width:100px;
+  height:auto;
+  object-fit: cover;
+  border-radius: 50%;
+  }
 .cool{
   color: white;
   padding:25px;
@@ -68,7 +85,7 @@ ion-content {
   color:#2196f3;
   }
 .home-colis {
- color: #000;
+
   }
 
 .icon-container:active{
