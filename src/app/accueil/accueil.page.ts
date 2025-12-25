@@ -23,12 +23,12 @@ export class accueilPage implements OnInit {
    ngOnInit() {
      this.voyageur = this.authService.getVoyageur();
       // Récupérer toutes les réservations
-      this.http.get<any[]>('http://localhost:3000/home')
-        .subscribe(home => {
-          if (home.length > 0) {
+      this.http.get<any[]>('http://localhost:3000/createcompte')
+        .subscribe(createcompte => {
+          if (createcompte.length > 0) {
             // Ici on prend la dernière réservation
-            const lasthome = home[home.length - 1];
-            this.nom = lasthome.nom;
+            const lasthome = createcompte[createcompte.length - 1];
+            this.nom = lastcreatecompte.nom;
           }
      });
     }
