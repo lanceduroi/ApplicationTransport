@@ -87,6 +87,14 @@
       "phone": "81708034",
       "email": "elikebir381@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "1766693252879",
+      "firstName": "kata",
+      "lastName": "abdallah",
+      "phone": "80123450",
+      "email": "kata123@gmail.com",
+      "password": "1234"
     }
   ],
   "reservations": [
@@ -319,6 +327,46 @@
       "DateDepart": "2025-12-17",
       "typeReservation": "standard",
       "DateReservation": "2025-12-25T17:08",
+      "montant": 5000,
+      "status": "nonvalider"
+    },
+    {
+      "id": "b3ef",
+      "VilleDepart": "Niamey",
+      "VilleArrivee": "Zinder",
+      "DateDepart": "2025-12-11",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-25T21:01",
+      "montant": 5000,
+      "status": "nonvalider"
+    },
+    {
+      "id": "b2df",
+      "VilleDepart": "Niamey",
+      "VilleArrivee": "Zinder",
+      "DateDepart": "2025-12-11",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-25T21:04",
+      "montant": 5000,
+      "status": "valider"
+    },
+    {
+      "id": "e0ed",
+      "VilleDepart": "Niamey",
+      "VilleArrivee": "Maradi",
+      "DateDepart": "2025-12-04",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-25T21:34",
+      "montant": 5000,
+      "status": "nonvalider"
+    },
+    {
+      "id": "abd9",
+      "VilleDepart": "Niamey",
+      "VilleArrivee": "Maradi",
+      "DateDepart": "2025-12-03",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-25T22:23",
       "montant": 5000,
       "status": "nonvalider"
     }

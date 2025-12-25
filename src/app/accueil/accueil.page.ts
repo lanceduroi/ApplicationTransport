@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonFooter, IonGrid, IonCol, IonRow, IonLabel, IonIcon, IonList, IonItem } from '@ionic/angular/standalone';
 import { NavController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
+import { Voyageur } from '../models/voyageur';
 @Component({
   selector: 'app-accueil',
   templateUrl: 'accueil.page.html',
@@ -12,13 +13,15 @@ import { AuthService } from '../services/auth.service';
 })
 export class accueilPage implements OnInit {
   nom: string = '';
+  
+  voyageur: Voyageur | null = null;
 
   constructor(private http: HttpClient,private navCtrl: NavController,private authService: AuthService ) {}
 
   goToReservation() { this.navCtrl.navigateForward('/home'); }
 
    ngOnInit() {
-     
+     this.voyageur = this.authService.getVoyageur();
       // Récupérer toutes les réservations
       this.http.get<any[]>('http://localhost:3000/home')
         .subscribe(home => {
@@ -27,8 +30,12 @@ export class accueilPage implements OnInit {
             const lasthome = home[home.length - 1];
             this.nom = lasthome.nom;
           }
-        });
+     });
     }
+       logout() {
+    this.authService.logout();
+  }
+    
 
   showMessage1() {
     alert('Bienvenue sur le bouton secondaire');

@@ -45,7 +45,10 @@ addIcons({
    'location-outline':locateOutline,
    'bus-outline':busOutline,
    'bulb-outline':bulbOutline,
-   'business-outline':businessOutline
+   'business-outline':businessOutline,
+   'logoGoogle':logoGoogle,
+  'logoGithub':logoGithub,
+  'logoFacebook':logoFacebook,
 });
 
 
