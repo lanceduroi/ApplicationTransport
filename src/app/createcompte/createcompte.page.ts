@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
 import { IonicModule, NavController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 import { VoyageurService } from 'src/app/services/voyageur.service';
 import { Router } from '@angular/router';
 
@@ -13,12 +14,13 @@ import { Router } from '@angular/router';
   imports: [IonicModule, CommonModule, ReactiveFormsModule]
 })
 export class CreatecomptePage implements OnInit {
+  nom: string = '';
 
   form!: FormGroup;
   error = '';
   passwordVisible = false;
 
-  constructor(private navCtrl: NavController, private fb: FormBuilder, private voyageurService: VoyageurService, private router: Router) { }
+  constructor(private navCtrl: NavController, private fb: FormBuilder, private voyageurService: VoyageurService, private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({

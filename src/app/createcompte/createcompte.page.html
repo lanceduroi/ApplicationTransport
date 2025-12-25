@@ -14,7 +14,7 @@
   <form [formGroup]="form" (ngSubmit)="submit()">
 
     <ion-item>
-      <ion-input placeholder="Nom" type="text" formControlName="lastName"></ion-input>
+      <ion-input placeholder="nom" [(ngModel)]="nom" type="text" formControlName="lastName"></ion-input>
     </ion-item>
 
     <ion-item>
