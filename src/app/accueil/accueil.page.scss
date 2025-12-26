@@ -7,6 +7,7 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
 .position{
   position:absolute;
   top:20px;
@@ -26,7 +27,7 @@
   border-radius: 50%;
   }
 .cool{
-  color: white;
+  color: rgb(25, 25, 27);
   padding:25px;
   }
 
@@ -67,7 +68,7 @@ home{
   }
 }
 ion-content {
-  --background:#007BFF;
+  --background:hsl(200, 43%, 99%);
 
   }
 .icon-container {
@@ -111,10 +112,10 @@ color: #f9f9f9;
   }
 }
 .marque-title{
-  color: white;
+  color: rgb(17, 17, 17);
   }
 .cadre{
-  background: linear-gradient(135deg, #00f5d4, #00bbf9, #9b5de5);
+  background: linear-gradient(135deg, blue, blue, blue);
   border-top-left-radius:15px;
   border-top-right-radius:15px;
   padding-top:10px;
@@ -138,3 +139,11 @@ color: #f9f9f9;
 #container a {
   text-decoration: none;
 }
+.blue-toolbar { --background: blue; 
+               --color: white; }
+.marque-title { background: linear-gradient(135deg,#2196f3, #2196f3); 
+  color: #fff; 
+   padding: 10px; border-radius: 12px; 
+   text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); h2 { margin: 10px 10px; font-weight: bold; font-size: 1.4rem; letter-spacing: 1px; } 
+   ion-icon { color: #ffd700; 
+     margin-right: 8px; vertical-align: middle; } }

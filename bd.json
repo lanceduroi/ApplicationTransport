@@ -95,6 +95,62 @@
       "phone": "80123450",
       "email": "kata123@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "1766703954350",
+      "firstName": "ali",
+      "lastName": "wini",
+      "phone": "60169791",
+      "email": "elik@gmail.com",
+      "password": "elik"
+    },
+    {
+      "id": "1766705345204",
+      "firstName": "ALI",
+      "lastName": "Mht",
+      "phone": "60169791",
+      "email": "elikebir381@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "1766708790200",
+      "firstName": "nour ",
+      "lastName": "mhtnour",
+      "phone": "60169791",
+      "email": "nour@gmail.com",
+      "password": "nour123"
+    },
+    {
+      "id": "1766740564541",
+      "firstName": "petit",
+      "lastName": "petit",
+      "phone": "60983448",
+      "email": "petit12@gmail.com",
+      "password": "petit12"
+    },
+    {
+      "id": "1766744053486",
+      "firstName": "kata",
+      "lastName": "abdallah",
+      "phone": "60983449",
+      "email": "abdallah@gmail.com",
+      "password": "kata"
+    },
+    {
+      "id": "1766748537680",
+      "firstName": "ALI",
+      "lastName": "Mht",
+      "phone": "60169791",
+      "email": "elikebir381@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "1766748629343",
+      "firstName": "mahmat",
+      "lastName": "Ahmat",
+      "phone": "67889990",
+      "email": "mht123456@gmail.coml",
+      "password": "1234"
     }
   ],
   "reservations": [
@@ -369,6 +425,66 @@
       "DateReservation": "2025-12-25T22:23",
       "montant": 5000,
       "status": "nonvalider"
+    },
+    {
+      "id": "852b",
+      "VilleDepart": "Zinder",
+      "VilleArrivee": "Maradi",
+      "DateDepart": "2025-12-18",
+      "typeReservation": "VIP",
+      "DateReservation": "2025-12-26T00:59",
+      "montant": 10000,
+      "status": "valider"
+    },
+    {
+      "id": "2bd3",
+      "VilleDepart": "Zinder",
+      "VilleArrivee": "Zinder",
+      "DateDepart": "2025-12-18",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-26T10:29",
+      "montant": 5000,
+      "status": "valider"
+    },
+    {
+      "id": "63ad",
+      "VilleDepart": "Zinder",
+      "VilleArrivee": "Zinder",
+      "DateDepart": "2025-12-11",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-26T10:33",
+      "montant": 5000,
+      "status": "nonvalider"
+    },
+    {
+      "id": "a551",
+      "VilleDepart": "Zinder",
+      "VilleArrivee": "Maradi",
+      "DateDepart": "2025-12-11",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-26T10:55",
+      "montant": 5000,
+      "status": "nonvalider"
+    },
+    {
+      "id": "5897",
+      "VilleDepart": "Maradi",
+      "VilleArrivee": "Maradi",
+      "DateDepart": "2025-12-11",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-26T10:57",
+      "montant": 5000,
+      "status": "nonvalider"
+    },
+    {
+      "id": "cd68",
+      "VilleDepart": "Zinder",
+      "VilleArrivee": "Niamey",
+      "DateDepart": "2025-12-04",
+      "typeReservation": "standard",
+      "DateReservation": "2025-12-26T11:24",
+      "montant": 5000,
+      "status": "valider"
     }
   ],
   "Bus": [

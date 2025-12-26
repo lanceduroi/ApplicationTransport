@@ -37,26 +37,30 @@ export class CreatecomptePage implements OnInit {
   }
 
   submit() {
-    if (this.form.invalid) return;
+  if (this.form.invalid) {
+    this.form.markAllAsTouched();
+    return;
+  }
 
-    const newVoyageur = {
-      id: Date.now().toString(),
-      firstName: this.form.value.firstName,
-      lastName: this.form.value.lastName,
-      phone: this.form.value.phone,
-      email: this.form.value.email,
-      password: this.form.value.password
-    };
+  const newVoyageur = {
+    id: Date.now().toString(),
+    firstName: this.form.value.firstName,
+    lastName: this.form.value.lastName,
+    phone: this.form.value.phone,
+    email: this.form.value.email,
+    password: this.form.value.password
+  };
 
-    this.voyageurService.create(newVoyageur).subscribe({
-      next: () => {
-        this.router.navigateByUrl('/login');
-      },
-      error: (err) => {
-        console.error(err);
-        this.error = 'Impossible de créer le compte. Veuillez réessayer.';
-      }
-    });
+  this.voyageurService.create(newVoyageur).subscribe({
+    next: () => {
+      alert('✅ Votre compte a été créé avec succès');
+      this.form.reset(); // <-- réinitialise tous les champs
+      this.router.navigateByUrl('/login');
+    },
+    error: () => {
+      this.error = '❌ Erreur lors de la création du compte';
+    }
+  });
   }
 
   goBack() {

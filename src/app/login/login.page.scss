@@ -70,10 +70,12 @@ ion-icon {
 
 /* Lien mot de passe oublié */
 .forgot {
-  display: block;
+  display: inline-block;
   text-align: center;
   margin-top: 10px;
-  color: white;
+  margin-left: 100px;
+  color: #e0e7f5;
+  background-color: #3880ff;
   font-weight: 500;
 }
 

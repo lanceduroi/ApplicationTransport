@@ -6,12 +6,14 @@ import { IonContent, IonHeader, IonTitle, IonToolbar,IonItem ,IonButton,
   IonBackButton} from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { Reservation } from '../reservation';
+import { AuthService } from '../services/auth.service';
 import {
   IonCard,
   IonCardHeader,
   IonCardTitle,
   IonCardContent
 } from '@ionic/angular/standalone';
+import { Icon } from 'ionicons/dist/types/components/icon/icon';
 @Component({
   selector: 'app-validation',
   templateUrl: './validation.page.html',
@@ -26,16 +28,19 @@ import {
 })
 export class ValidationPage implements OnInit {
    lastReservation: any;
-  constructor(private router: Router, private reservation: Reservation) { }
+  constructor(private router: Router, private reservation: Reservation,private auth: AuthService) { }
   currentUser: any;
   ngOnInit() {
    this.loadLastReservation()
      const userData = localStorage.getItem('currentUser');
+     this.currentUser = this.auth.getCurrentUser();
 
   if (userData) {
     this.currentUser = JSON.parse(userData);
   }
   }
+  //pour recuperer utilusateur connecter
+  get fullName(): string { return this.currentUser ? `${this.currentUser.firstName} ${this.currentUser.lastName}` : ''; }
   //Annulation
   annulerReservation() {
   const ok = confirm('Voulez-vous vraiment annuler cette réservation ?');
@@ -63,6 +68,7 @@ export class ValidationPage implements OnInit {
       .subscribe(() => {
         alert('Réservation validée ✅');
         this.loadLastReservation();
+           this.router.navigate(['/home']);
     
       });
   }

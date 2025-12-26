@@ -22,6 +22,7 @@ import {
   logoGithub,
   logoFacebook,
   businessOutline,
+  personCircleOutline,
 } from 'ionicons/icons';
 
 import { routes } from './app/app.routes';
@@ -49,6 +50,7 @@ addIcons({
    'logoGoogle':logoGoogle,
   'logoGithub':logoGithub,
   'logoFacebook':logoFacebook,
+  'person-circle-outline':personCircleOutline
 });
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, IonButton, IonList, IonSelect, IonNote,
+  IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, IonButton, IonList, IonSelect,
   IonSelectOption, IonLabel, IonButtons, IonBackButton
 } from '@ionic/angular/standalone';
 import { Reservation } from '../reservation';
@@ -8,7 +8,7 @@ import { IonIcon, IonToggle } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-
+import { AuthService } from '../services/auth.service';
 import {
   IonCard
 } from '@ionic/angular/standalone';
@@ -26,7 +26,7 @@ import {
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonNote, IonContent, IonItem, IonInput, IonButton, IonList,
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, IonButton, IonList,
     FormsModule,
     IonSelect,
     IonSelectOption,
@@ -65,10 +65,12 @@ export class HomePage {
   reservations: any[] = [];
   editMode = false;
   editId: number | null = null;
+  currentUser: any;
   constructor(private reservation: Reservation,
-    private router: Router) {
+    private router: Router,private auth: AuthService) {
     addIcons({ busOutline, locationOutline, calendarOutline, starOutline, cashOutline, saveOutline, timeOutline, createOutline, trashOutline, personAddOutline });
   }
+  
   toggleReservations() {
     this.showReservations = !this.showReservations;
     //le boutton est desactive tant que le formulaire n'est pas remplit

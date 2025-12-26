@@ -36,6 +36,7 @@ export class LoginPage implements OnInit {
 
     const ok = await this.auth.login(email!, password!);
     if (ok) {
+      this.form.reset(); // <-- réinitialise tous les champs
       this.router.navigateByUrl('/accueil');
     } else {
       this.error = 'Identifiants incorrects';
